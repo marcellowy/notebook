@@ -27,4 +27,6 @@ vim /etc/fstab
 # 第二个0:表示开机时检查文件系统的顺序，0：表示不检查
 UUID=c2493762-e206-4f4d-9400-42456831ec62 /data/test1            xfs    defaults        0 0
 # 这里可以自行搜索一下，写法有好几种
+# 我最喜欢下面这样写，简单 
+/dev/sda1 /data ext4 defaults 0 0
 ```
