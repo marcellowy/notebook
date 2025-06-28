@@ -35,10 +35,15 @@ iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT -p icmp -j ACCEPT
 
 # 放行web端口,多端口放行
-iptables -A INPUT -p tcp -m multiport --dport 80,443 -j ACCEPT
+# New 新的连接
+iptables -A INPUT -p tcp -m multiport -m state --state NEW --dport 80,443 -j ACCEPT
 
-# 放行连接端口
-iptables -A INPUT -p tcp --dport 5100:5120 -j ACCEPT
+# 放行连续端口
+iptables -A INPUT -p tcp -m state --state NEW --dport 5100:5120 -j ACCEPT
+
+# 常规单端口放行
+iptables -A INPUT -p tcp -m state --state NEW --dport 58604 -j ACCEPT
+
 ```
 
 ### 常用配置
