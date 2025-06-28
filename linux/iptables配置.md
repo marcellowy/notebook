@@ -3,46 +3,46 @@
 还是习惯用iptables,就切换回来好了
 
 ## iptables安装
-```
-// 安装
+```shell
+# 安装
 apt install iptables iptables-persistent
 
-// 保存当前,相当于持久化
+# 保存当前,相当于持久化
 netfilter-persistent save
 
-// 查看当前配置
+# 查看当前配置
 iptables-save
 ```
 
 ### iptables配置
-```
-// 显示当前iptables配置
+```shell
+# 显示当前iptables配置
 iptables -vnL --line-numbers
 
-iptables -F // 清除默认
-iptables -X // 清除所有自定义链
+iptables -F # 清除默认
+iptables -X # 清除所有自定义链
 
-iptables -P INPUT DROP // 设置INPUT链默认drop
+iptables -P INPUT DROP # 设置INPUT链默认drop
 
-// RELATED 服务器主动发起的请求
-// ESTABLISHED 已经建立连接的请求
+# RELATED 服务器主动发起的请求
+# ESTABLISHED 已经建立连接的请求
 iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 
-// 本地回环
+# 本地回环
 iptables -A INPUT -i lo -j ACCEPT
 
-// 放行icmp
+# 放行icmp
 iptables -A INPUT -p icmp -j ACCEPT
 
-// 放行web端口,多端口放行
+# 放行web端口,多端口放行
 iptables -A INPUT -p tcp -m multiport --dport 80,443 -j ACCEPT
 
-// 放行连接端口
+# 放行连接端口
 iptables -A INPUT -p tcp --dport 5100:5120 -j ACCEPT
 ```
 
 ### 常用配置
-```
+```shell
 -i eth0 指定网卡
 -s 指定来源ip
 -d 指定目标ip
