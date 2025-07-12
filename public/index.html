@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+	<meta name="generator" content="Hugo 0.148.1">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>肆火BLOG</title><meta name="Description" content="This is my cool site"><meta property="og:url" content="https://blog.wyi.hk/">
+  <meta property="og:site_name" content="肆火BLOG">
+  <meta property="og:title" content="肆火BLOG">
+  <meta property="og:description" content="This is my cool site">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="肆火BLOG">
+  <meta name="twitter:description" content="This is my cool site">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.wyi.hk/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="肆火BLOG">
+    <link rel="feed" href="/index.xml" type="application/rss+xml" title="肆火BLOG"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "https:\/\/blog.wyi.hk\/","inLanguage": "zh-cn","author": {
+                "@type": "Person",
+                "name": "肆火"
+            },"description": "This is my cool site","name": "肆火BLOG"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="肆火BLOG">肆火BLOG</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="肆火BLOG">肆火BLOG</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="page home" data-home="posts"><div class="home-profile"><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/marcellowy" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://t.me/marcellowy" title="Telegram" target="_blank" rel="noopener noreffer me"><i class="fab fa-telegram-plane fa-fw" aria-hidden="true"></i></a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/cmake%E8%AE%BE%E7%BD%AE/">cmake设置</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://blog.wyi.hk" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>肆火</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-12">2025-07-12</time></span></div><div class="content"><h3 id="cmake设置msvc工程mtmtdmdmdd">CMake设置MSVC工程MT/MTd/MD/MDd</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cmake_minimum_required<span style="color:#f92672">(</span>VERSION 3.27<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置策略CMP0091为NEW，新策略</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>POLICY CMP0091<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    cmake_policy<span style="color:#f92672">(</span>SET CMP0091 NEW<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>endif <span style="color:#f92672">(</span>POLICY CMP0091<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>project<span style="color:#f92672">(</span>Test<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># cxx标准</span>
+</span></span><span style="display:flex;"><span>set<span style="color:#f92672">(</span>CMAKE_CXX_STANDARD 17<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>add_executable<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">${</span>PROJECT_NAME<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>        main.cpp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置MT/MTd</span>
+</span></span><span style="display:flex;"><span>set_property<span style="color:#f92672">(</span>TARGET <span style="color:#e6db74">${</span>PROJECT_NAME<span style="color:#e6db74">}</span> PROPERTY
+</span></span><span style="display:flex;"><span>        MSVC_RUNTIME_LIBRARY <span style="color:#e6db74">&#34;MultiThreaded</span>$<span style="color:#e6db74">&lt;</span>$<span style="color:#e6db74">&lt;CONFIG:Debug&gt;:Debug&gt;&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 链接到user32库</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#target_link_libraries(${PROJECT_NAME} user32)</span>
+</span></span></code></pre></div><h3 id="cmake-add_subdirectory匹配多个目录">cmake add_subdirectory匹配多个目录</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 将当前所有目录放入V_GLOB</span>
+</span></span><span style="display:flex;"><span>file<span style="color:#f92672">(</span>GLOB V_GLOB LIST_DIRECTORIES true <span style="color:#e6db74">&#34;*&#34;</span><span style="color:#f92672">)</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 遍历目录</span>
+</span></span><span style="display:flex;"><span>foreach <span style="color:#f92672">(</span>item <span style="color:#e6db74">${</span>V_GLOB<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>IS_DIRECTORY <span style="color:#e6db74">${</span>item<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 如果是目录</span>
+</span></span><span style="display:flex;"><span>        add_subdirectory<span style="color:#f92672">(</span><span style="color:#e6db74">${</span>item<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    endif <span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>endforeach <span style="color:#f92672">()</span>
+</span></span></code></pre></div><h2 id="globglob-recurse使用">GLOB/GLOB-RECURSE使用</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 1.GLOB 帮助开发收集要编译的源文件，就是模糊匹配到文件后，把所有文件放到一个变量里面</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cmake_minimum_required<span style="color:#f92672">(</span>VERSION 3.10<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>project<span style="color:#f92672">(</span>MyProject<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置变量包含所有源文件</span>
+</span></span><span style="display:flex;"><span>file<span style="color:#f92672">(</span>GLOB MY_PROJECT_SOURCES <span style="color:#e6db74">&#34;src/*.cpp&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将源文件编译成可执行文件</span>
+</span></span><span style="display:flex;"><span>add_executable<span style="color:#f92672">(</span><span style="color:#e6db74">${</span>PROJECT_NAME<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>SOURCE_SRC<span style="color:#e6db74">}</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>这样所有的src下面的cpp文件都放进了 MY_PROJECT_SOURCES 这个变量中，后面可以直接使用这个编译进行可执行文件的编译
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2.GLOB_RECURSE</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># GLOB会递归的寻找文件夹下面的文件，GLOB_RECURSE就不会就这点区别</span>
+</span></span></code></pre></div></div><div class="post-footer">
+        <a href="/posts/cmake%E8%AE%BE%E7%BD%AE/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/git_settings/">git设置</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://blog.wyi.hk" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>肆火</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-12">2025-07-12</time></span></div><div class="content"><h3 id="git-使用指定-ssh-key">git 使用指定 ssh key</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 在仓库 clone 时指定key</span>
+</span></span><span style="display:flex;"><span>git clone git@github.com:yoyun/hello.git --config core.sshCommand<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh -i ~/.ssh/you_ssh_key&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在 config 中指定</span>
+</span></span><span style="display:flex;"><span>git config core.sshCommand <span style="color:#e6db74">&#34;ssh -i ~/.ssh/you_ssh_key&#34;</span>
+</span></span></code></pre></div></div><div class="post-footer">
+        <a href="/posts/git_settings/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/debian%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA/">Debian 设置时区</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://blog.wyi.hk" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>肆火</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-12">2025-07-12</time></span></div><div class="content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 设置时区</span>
+</span></span><span style="display:flex;"><span>sudo timedatectl set-timezone Asia/Shanghai
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看</span>
+</span></span><span style="display:flex;"><span>sudo timedatectl status
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看</span>
+</span></span><span style="display:flex;"><span>date
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 手动设置</span>
+</span></span><span style="display:flex;"><span>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</span></span></code></pre></div></div><div class="post-footer">
+        <a href="/posts/debian%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/docker%E9%85%8D%E7%BD%AEpull%E4%BB%A3%E7%90%86/">docker配置pull代理</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://blog.wyi.hk" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>肆火</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-12">2025-07-12</time></span></div><div class="content"><p>1.创建 dockerd 相关的 systemd 目录，这个目录下的配置将覆盖 dockerd 的默认配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo mkdir -p /etc/systemd/system/docker.service.d
+</span></span></code></pre></div><p>2.新建配置文件 /etc/systemd/system/docker.service.d/http-proxy.conf，这个文件中将包含环境变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Environment<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HTTP_PROXY=http://proxy.example.com:80&#34;</span>
+</span></span><span style="display:flex;"><span>Environment<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HTTPS_PROXY=https://proxy.example.com:443&#34;</span>
+</span></span></code></pre></div><p>3.如果你自己建了私有的镜像仓库，需要 dockerd 绕过代理服务器直连，那么配置 NO_PROXY 变量：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Environment<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HTTP_PROXY=http://proxy.example.com:80&#34;</span>
+</span></span><span style="display:flex;"><span>Environment<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HTTPS_PROXY=https://proxy.example.com:443&#34;</span>
+</span></span><span style="display:flex;"><span>Environment<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;NO_PROXY=your-registry.com,10.10.10.10,*.example.com&#34;</span>
+</span></span></code></pre></div><p>4.重新加载配置文件，重启 dockerd</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>systemctl daemon-reload
+</span></span><span style="display:flex;"><span>systemctl restart docker
+</span></span></code></pre></div><p>5.检查确认环境变量已经正确配置：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>systemctl show --property<span style="color:#f92672">=</span>Environment docker
+</span></span></code></pre></div></div><div class="post-footer">
+        <a href="/posts/docker%E9%85%8D%E7%BD%AEpull%E4%BB%A3%E7%90%86/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/iptables%E9%85%8D%E7%BD%AE/">iptables常用</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://blog.wyi.hk" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>肆火</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-12">2025-07-12</time></span></div><div class="content"><p>最近发现docker不受iptables管理,ufw的管理虽然简单，但是总感觉不好控制
+还是习惯用iptables,就切换回来好了</p>
+<h2 id="iptables安装">iptables安装</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 安装</span>
+</span></span><span style="display:flex;"><span>apt install iptables iptables-persistent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 保存当前,相当于持久化</span>
+</span></span><span style="display:flex;"><span>netfilter-persistent save
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看当前配置</span>
+</span></span><span style="display:flex;"><span>iptables-save
+</span></span></code></pre></div><h3 id="iptables配置">iptables配置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 显示当前iptables配置</span>
+</span></span><span style="display:flex;"><span>iptables -vnL --line-numbers
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>iptables -F <span style="color:#75715e"># 清除默认</span>
+</span></span><span style="display:flex;"><span>iptables -X <span style="color:#75715e"># 清除所有自定义链</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>iptables -P INPUT DROP <span style="color:#75715e"># 设置INPUT链默认drop</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># RELATED 服务器主动发起的请求</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ESTABLISHED 已经建立连接的请求</span>
+</span></span><span style="display:flex;"><span>iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 本地回环</span>
+</span></span><span style="display:flex;"><span>iptables -A INPUT -i lo -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 放行icmp</span>
+</span></span><span style="display:flex;"><span>iptables -A INPUT -p icmp -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 放行web端口,多端口放行</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># New 新的连接</span>
+</span></span><span style="display:flex;"><span>iptables -A INPUT -p tcp -m multiport -m state --state NEW --dport 80,443 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 放行连续端口</span>
+</span></span><span style="display:flex;"><span>iptables -A INPUT -p tcp -m state --state NEW --dport 5100:5120 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 常规单端口放行</span>
+</span></span><span style="display:flex;"><span>iptables -A INPUT -p tcp -m state --state NEW --dport <span style="color:#ae81ff">58604</span> -j ACCEPT
+</span></span></code></pre></div><h3 id="常用配置">常用配置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-i eth0 指定网卡
+</span></span><span style="display:flex;"><span>-s 指定来源ip
+</span></span><span style="display:flex;"><span>-d 指定目标ip
+</span></span><span style="display:flex;"><span>--sport 指定来源端口
+</span></span><span style="display:flex;"><span>--dport 指定目标端口
+</span></span><span style="display:flex;"><span>-j ACCEPT 放行
+</span></span><span style="display:flex;"><span>-j REJECT 拒绝
+</span></span></code></pre></div></div><div class="post-footer">
+        <a href="/posts/iptables%E9%85%8D%E7%BD%AE/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/linux%E5%88%A0%E9%99%A4%E5%8C%85%E5%90%AB%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E7%9B%AE%E5%BD%95%E6%88%96%E6%96%87%E4%BB%B6/">linux删除包含特殊字符的目录或文件</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://blog.wyi.hk" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>肆火</a></span>&nbsp;<span class="post-publish">published on <time datetime="2025-07-12">2025-07-12</time></span></div><div class="content"><p>首先使用 ls -i 查看包含特殊字符的文件/目录名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@comet:~# ls -i -l
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">28</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">26222802</span> drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Feb  <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">2024</span>  fonts
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">26214522</span> drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Jun <span style="color:#ae81ff">27</span> 10:12  nes
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">26214418</span> drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">16</span> 15:18  picoshare
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">26214527</span> -rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">7033</span> Nov <span style="color:#ae81ff">13</span> 01:14 <span style="color:#e6db74">&#39;&#39;$&#39;\033&#39;&#39;:Qq&#39;</span> <span style="color:#75715e"># 这就是我需要删除的</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">26214412</span> drwxr-xr-x <span style="color:#ae81ff">3</span> root root <span style="color:#ae81ff">4096</span> Jun <span style="color:#ae81ff">28</span> 04:06  sslocal
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">26214504</span> drwxrwxrwx <span style="color:#ae81ff">5</span> root root <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">22</span> 01:30  transmission
+</span></span></code></pre></div><p>然后通过find后进行删除</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@comet:~# find . -inum <span style="color:#ae81ff">26214527</span> -exec rm -r <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span> <span style="color:#75715e"># 后面的 ; 不能省略</span>
+</span></span><span style="display:flex;"><span>root@comet:~# ls -l
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Feb  <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">2024</span> fonts
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Jun <span style="color:#ae81ff">27</span> 10:12 nes
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">16</span> 15:18 picoshare
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ae81ff">3</span> root root <span style="color:#ae81ff">4096</span> Jun <span style="color:#ae81ff">28</span> 04:06 sslocal
+</span></span><span style="display:flex;"><span>drwxrwxrwx <span style="color:#ae81ff">5</span> root root <span style="color:#ae81ff">4096</span> May <span style="color:#ae81ff">22</span> 01:30 transmission
+</span></span></code></pre></div></div><div class="post-footer">
+        <a href="/posts/linux%E5%88%A0%E9%99%A4%E5%8C%85%E5%90%AB%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E7%9B%AE%E5%BD%95%E6%88%96%E6%96%87%E4%BB%B6/">Read More</a></div>
+</article><ul class="pagination"><li class="page-item active">
+                    <span class="page-link">
+                        <a href="/">1</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/page/2/">2</a>
+                    </span>
+                </li></ul></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.wyi.hk" target="_blank">肆火</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"data":{"id-1":"书山有路勤为径，学海无涯苦作舟"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
