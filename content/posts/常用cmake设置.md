@@ -1,3 +1,8 @@
++++
+date = '2025-07-14T11:10:16+08:00'
+title = 'Cmake常见工程设置'
++++
+
 ### 主文件
 ```shell
 cmake_minimum_required(VERSION 3.29)
