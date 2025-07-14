@@ -3,6 +3,33 @@ date = '2025-07-12T12:47:16+08:00'
 title = 'cmake设置'
 +++
 
+### 链接静态文件
+```shell
+target_link_libraries(${SHARED_LIB} PRIVATE
+        spdlog::spdlog
+)
+```
+
+### 设置输出目录
+```shell
+set(OUTPUT_RELEASE_DIR "${OUTPUT_DIR_NAME}/release/x86")
+set(OUTPUT_DEBUG_DIR "${OUTPUT_DIR_NAME}/debug/x86")
+if (CMAKE_CL_64)
+    set(OUTPUT_RELEASE_DIR "${OUTPUT_DIR_NAME}/release/x64")
+    set(OUTPUT_DEBUG_DIR "${OUTPUT_DIR_NAME}/debug/x64")
+endif ()
+
+set_target_properties(${SHARED_LIB}
+        PROPERTIES
+        # 静态文件
+        ARCHIVE_OUTPUT_DIRECTORY_RELEASE "${OUTPUT_RELEASE_DIR}"
+        ARCHIVE_OUTPUT_DIRECTORY_DEBUG "${OUTPUT_DEBUG_DIR}"
+        # 动态文件
+        RUNTIME_OUTPUT_DIRECTORY_RELEASE ${OUTPUT_RELEASE_DIR}
+        RUNTIME_OUTPUT_DIRECTORY_DEBUG ${OUTPUT_DEBUG_DIR}
+)
+```
+
 ### CMake设置MSVC工程MT/MTd/MD/MDd
 ```shell
 cmake_minimum_required(VERSION 3.27)
