@@ -48,6 +48,10 @@ iptables -A INPUT -p tcp -m state --state NEW --dport 5100:5120 -j ACCEPT
 # 常规单端口放行
 iptables -A INPUT -p tcp -m state --state NEW --dport 58604 -j ACCEPT
 
+# 限制访问docker映射出来的端口
+# 桥接模式使用以下命令,如果是host直接在filter的INPUT限制即可
+iptables -t nat -I PREROUTING 1 -p tcp --dport 3999 -j REDIRECT --to-port 39999 # 将请求到 3999 端口的请求转发到 39999 端口，
+
 ```
 
 ### 常用配置
